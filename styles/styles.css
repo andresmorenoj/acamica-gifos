@@ -30,47 +30,105 @@ body {
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
+.crear:hover {
+  outline-style: dashed;
+  outline-width: 0.9px;
+  outline-offset: -4px;
+  background: #e6bbe2;
+}
+
 .contenedor__nav__temas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contenedor__nav__temas p {
   background: #f7c9f3;
   color: #110038;
-  padding: 0;
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 167px;
-  height: 36px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  z-index: 1;
+  margin: 0;
+  padding: 9px 26.5px;
+  text-align: center;
 }
 
 .contenedor__nav__temas img {
-  border-left: 1px solid #110038;
+  border-top: 1px solid #110038;
+  border-right: 1px solid #110038;
+  border-bottom: 1px solid #110038;
+  background: #f7c9f3;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
   padding: 13px 15px;
   justify-self: flex-end;
 }
 
-.header__contenedor ul {
+.contenedor__nav__temas p:hover {
+  outline-style: dashed;
+  outline-width: 0.9px;
+  outline-offset: -4px;
+  background: #e6bbe2;
+}
+
+.contenedor__nav__temas img:hover {
+  outline-style: dashed;
+  outline-width: 0.9px;
+  outline-offset: -4px;
+  background: #e6bbe2;
+}
+
+.contenedor__nav {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+}
+
+.contenedor__nav ul {
   display: none;
   list-style: none;
   width: 167px;
+  height: auto;
   margin: 0;
   padding: 0;
 }
 
-.header__contenedor:hover ul,
+.contenedor__nav:hover ul,
 ul:hover {
   display: block;
+  position: absolute;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.contenedor__nav li {
+  background: #f0f0f0;
+  margin: 0;
+  padding: 7px 0 7px 16px;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+}
+
+.contenedor__nav li:first-child {
+  margin: 0 0 10px 0;
+}
+
+.contenedor__nav li:hover {
+  background: #fff4fd;
+  border: 1px solid #cca6c9;
+  -webkit-box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+}
+
+.contenedor__nav li:hover::first-letter {
+  text-decoration: underline;
 }
