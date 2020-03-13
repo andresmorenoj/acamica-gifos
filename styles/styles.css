@@ -16,6 +16,7 @@ body {
           box-shadow: 0 1px 0 0 #110038;
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
+  margin-top: 0;
 }
 
 .crear {
@@ -28,6 +29,8 @@ body {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  justify-self: flex-end;
+  margin-right: 16px;
 }
 
 .crear:hover {
@@ -41,6 +44,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 16.5px;
 }
 
 .contenedor__nav__temas p {
@@ -51,9 +55,9 @@ body {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-  width: 167px;
+  width: 131px;
   margin: 0;
-  padding: 9px 26.5px;
+  padding: 9px 15.5px;
   text-align: center;
 }
 
@@ -85,7 +89,6 @@ body {
 .contenedor__nav {
   display: inline-block;
   position: relative;
-  z-index: 3;
 }
 
 .contenedor__nav ul {
@@ -99,7 +102,6 @@ body {
 
 .contenedor__nav:hover ul,
 ul:hover {
-  display: block;
   position: absolute;
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
@@ -107,6 +109,11 @@ ul:hover {
   background: #e6e6e6;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.desplegar:hover ul,
+ul:hover {
+  display: block;
 }
 
 .contenedor__nav li {
@@ -131,4 +138,49 @@ ul:hover {
 
 .contenedor__nav li:hover::first-letter {
   text-decoration: underline;
+}
+
+.mis-guifos {
+  text-decoration: none;
+  color: #110038;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  padding: 8px 15px 8px 0;
+}
+
+.mis-guifos::first-letter {
+  text-decoration: underline;
+}
+
+.mis-guifos:hover {
+  border-style: dashed;
+  border-width: 0.1px;
+  border-color: #110038;
+}
+
+.mis-guifos:active {
+  color: #110038;
+  opacity: 50%;
+}
+
+.header__contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 44px 70.25px 0 70.25px;
+}
+
+.header__contenedor .contenedor__botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

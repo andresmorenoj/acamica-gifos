@@ -13,15 +13,17 @@
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están./////// Número de visitas: 12.765.803</p>
       </div>
       <div class="header__contenedor"><img src="./atomic_html/assets/gifOF_logo.png" alt="Logo">
-        <nav class="contenedor__nav"><a class="crear" href="#">Crear Guifos</a>
-          <div class="contenedor__nav__temas">
-            <p>Elegir Tema</p><img src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo"/>
-          </div>
-          <ul>
-            <li>Sailor Day</li>
-            <li>Sailor Night</li>
-          </ul><a class="mis-guifos" href="#">Mis Guifos</a>
-        </nav>
+        <div class="contenedor__botones"><a class="crear" href="#">Crear Guifos</a>
+          <nav class="contenedor__nav" id="desplegar">
+            <div class="contenedor__nav__temas">
+              <p id="desplegarMenu" onClick="desplegar()">Elegir Tema</p><img id="desplegar2" src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo" onClick="desplegar()"/>
+            </div>
+            <ul>
+              <li>Sailor Day</li>
+              <li>Sailor Night</li>
+            </ul>
+          </nav><a class="mis-guifos" href="#">Mis Guifos</a>
+        </div>
       </div>
     </header>
     <form class="busquedad">
@@ -86,5 +88,6 @@
         <p>#wing #pupping #cute #dog #hellow #hi</p>
       </div>
     </section>
+    <script src="./atomic_html/util/index.js"></script>
   </body>
 </html>
