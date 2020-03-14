@@ -162,12 +162,6 @@ ul {
   opacity: 50%;
 }
 
-.busqueda {
-  background-color: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-}
-
 .busqueda__titulo {
   background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
   background-image: linear-gradient(to left, #f7c9f3, #4180f6);
@@ -175,11 +169,19 @@ ul {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
-  padding: 3px;
+  padding: 5px;
+  -webkit-box-shadow: inset -2px 0 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px 0 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 .busquedad__form {
   padding: 0 18px 12px 15px;
+}
+
+.busqueda {
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 .busqueda input:first-child {
