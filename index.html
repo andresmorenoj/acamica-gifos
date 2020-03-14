@@ -16,20 +16,25 @@
         <div class="contenedor__botones"><a class="crear" href="#">Crear Guifos</a>
           <nav class="contenedor__nav" id="desplegar">
             <div class="contenedor__nav__temas">
-              <p id="desplegarMenu" onClick="desplegar()">Elegir Tema</p><img id="desplegar2" src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo" onClick="desplegar()"/>
+              <p id="desplegarMenu">Elegir Tema</p><img id="desplegar2" src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo"/>
             </div>
             <ul>
-              <li>Sailor Day</li>
-              <li>Sailor Night</li>
+              <li id="item--tema" onclick="ocultar()">Sailor Day</li>
+              <li id="item--tema" onclick="ocultar()">Sailor Night</li>
             </ul>
           </nav><a class="mis-guifos" href="#">Mis Guifos</a>
         </div>
       </div>
     </header>
-    <form class="busquedad">
-      <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-      <input class="busquedad--boton" type="submit" value="Buscar">
-    </form>
+    <section class="busqueda">
+      <p class="busqueda__titulo">Buscar</p>
+      <form class="busquedad__form">
+        <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+        <label><img src="./atomic_html/assets/lupa_inactive.svg" alt="lupa inactiva">
+          <input class="busquedad--boton" type="submit" value="Buscar">
+        </label>
+      </form>
+    </section>
     <section class="sugerencia">
       <h3>Hoy te sugerimos:</h3>
       <div class="sugerencia__gifs">
