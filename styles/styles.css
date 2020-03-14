@@ -100,8 +100,11 @@ body {
   padding: 0;
 }
 
-.contenedor__nav:hover ul,
-ul:hover {
+.desplegar ul {
+  display: block;
+}
+
+ul {
   position: absolute;
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
@@ -111,11 +114,6 @@ ul:hover {
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
-.desplegar:hover ul,
-ul:hover {
-  display: block;
-}
-
 .contenedor__nav li {
   background: #f0f0f0;
   margin: 0;
@@ -123,6 +121,7 @@ ul:hover {
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
 }
 
 .contenedor__nav li:first-child {
@@ -163,6 +162,79 @@ ul:hover {
   opacity: 50%;
 }
 
+.busqueda {
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.busqueda__titulo {
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(to left, #f7c9f3, #4180f6);
+  color: #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 3px;
+}
+
+.busquedad__form {
+  padding: 0 18px 12px 15px;
+}
+
+.busqueda input:first-child {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  width: 90%;
+  padding: 13px 0 13px 16px;
+  font-family: "Chakra Petch", sans-serif;
+  margin-right: 2px;
+}
+
+.busqueda input:first-child::-webkit-input-placeholder {
+  color: #b4b4b4;
+}
+
+.busqueda input:first-child:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.busqueda input:first-child::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.busqueda input:first-child::placeholder {
+  color: #b4b4b4;
+}
+
+.busqueda label {
+  background: #e6e6e6;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+  padding: 9px 14px 9px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Chakra Petch", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 3px;
+}
+
+.busqueda label input {
+  background: #e6e6e6;
+  border: none;
+}
+
+.busqueda label img {
+  position: relative;
+  top: 3px;
+}
+
 .header__contenedor {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,4 +255,10 @@ ul:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.busqueda {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
