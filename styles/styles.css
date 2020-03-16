@@ -34,17 +34,10 @@ body {
 }
 
 .crear:hover {
-  outline-style: dashed;
-  outline-width: 0.9px;
+  outline-style: dotted;
+  outline-width: 1px;
   outline-offset: -4px;
   background: #e6bbe2;
-}
-
-.contenedor__nav__temas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 16.5px;
 }
 
 .contenedor__nav__temas p {
@@ -73,15 +66,15 @@ body {
 }
 
 .contenedor__nav__temas p:hover {
-  outline-style: dashed;
-  outline-width: 0.9px;
+  outline-style: dotted;
+  outline-width: 1px;
   outline-offset: -4px;
   background: #e6bbe2;
 }
 
 .contenedor__nav__temas img:hover {
-  outline-style: dashed;
-  outline-width: 0.9px;
+  outline-style: dotted;
+  outline-width: 1px;
   outline-offset: -4px;
   background: #e6bbe2;
 }
@@ -152,20 +145,14 @@ ul {
 }
 
 .mis-guifos:hover {
-  border-style: dashed;
-  border-width: 0.1px;
+  border-style: dotted;
+  border-width: 1px;
   border-color: #110038;
 }
 
 .mis-guifos:active {
   color: #110038;
   opacity: 50%;
-}
-
-.busqueda {
-  background-color: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 .busqueda__titulo {
@@ -175,11 +162,19 @@ ul {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
-  padding: 3px;
+  padding: 5px;
+  -webkit-box-shadow: inset -2px 0 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px 0 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 .busquedad__form {
   padding: 0 18px 12px 15px;
+}
+
+.busqueda {
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 .busqueda input:first-child {
@@ -235,6 +230,104 @@ ul {
   top: 3px;
 }
 
+.sugerencia h3 {
+  background: #fffafe;
+  border: 1px solid #e6bbe2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  padding: 7px;
+  font-size: 0.875rem;
+}
+
+.sugerencia__gif--titulo {
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(to left, #f7c9f3, #4180f6);
+}
+
+.sugerencia__gif--titulo p {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.sugerencia__gifs__container {
+  padding: 4px 4px 0 4px;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.sugerencia__gifs__container a {
+  color: #ffffff;
+  background: #4180f6;
+  border: 1px solid #4c2f99;
+  -webkit-box-shadow: inset -2px -2px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  padding: 8px 10px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 90px;
+  height: 34px;
+}
+
+.sugerencia__gifs__container .img--gif:hover {
+  outline-style: dotted;
+  outline-width: 1px;
+  outline-offset: -4px;
+}
+
+.sugerencia__gifs__container a:hover {
+  outline-style: dotted;
+  outline-width: 1px;
+  outline-offset: -5px;
+  outline-color: #110038;
+  background-color: #3a72db;
+}
+
+.contenedor__nav__temas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 16.5px;
+}
+
+.sugerencia__gif--titulo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 280px;
+  padding: 3px;
+}
+
+.sugerencia__gifs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sugerencia__gifs__container {
+  position: relative;
+}
+
 .header__contenedor {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,4 +354,11 @@ ul {
   width: 90%;
   margin: 0 auto;
   margin-top: 30px;
+}
+
+.sugerencia {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
 }
