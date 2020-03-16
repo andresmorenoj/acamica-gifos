@@ -298,6 +298,35 @@ ul {
   background-color: #3a72db;
 }
 
+.tendencia h3 {
+  background: #fffafe;
+  border: 1px solid #e6bbe2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  padding: 7px;
+  font-size: 0.875rem;
+}
+
+.tendencia__gif__container {
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.tendencia__gif__container p {
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(to left, #f7c9f3, #4180f6);
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  width: 100%;
+  margin: 0;
+}
+
 .contenedor__nav__temas {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -326,6 +355,13 @@ ul {
 
 .sugerencia__gifs__container {
   position: relative;
+}
+
+.tendencia {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
 }
 
 .header__contenedor {
@@ -357,6 +393,13 @@ ul {
 }
 
 .sugerencia {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+}
+
+.tendencia {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
