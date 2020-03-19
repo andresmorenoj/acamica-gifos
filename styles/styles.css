@@ -87,10 +87,9 @@ body {
 .contenedor__nav ul {
   display: none;
   list-style: none;
-  width: 167px;
+  width: 172px;
   height: auto;
   margin: 0;
-  padding: 0;
 }
 
 .desplegar ul {
@@ -101,7 +100,7 @@ ul {
   position: absolute;
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
-  padding: 10px;
+  padding: 15px 10px;
   background: #e6e6e6;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
@@ -342,6 +341,10 @@ ul {
   padding: 3px;
 }
 
+.sugerencia__gifs__container {
+  position: relative;
+}
+
 .sugerencia__gifs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,17 +354,6 @@ ul {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.sugerencia__gifs__container {
-  position: relative;
-}
-
-.tendencia {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
 }
 
 .header__contenedor {
