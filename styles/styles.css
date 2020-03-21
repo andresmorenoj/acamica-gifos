@@ -308,13 +308,13 @@ ul {
   font-size: 0.875rem;
 }
 
-.tendencia__gif__container {
-  background: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+.tendencia__gif__container p {
+  display: none;
 }
 
-.tendencia__gif__container p {
+.gif__contenedor--1:hover p,
+.gif__contenedor--2:hover p {
+  display: block;
   background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
   background-image: linear-gradient(to left, #f7c9f3, #4180f6);
   font-family: "Chakra Petch", sans-serif;
@@ -324,6 +324,27 @@ ul {
   letter-spacing: 0;
   width: 100%;
   margin: 0;
+  position: relative;
+  bottom: 10px;
+  padding: 7px;
+}
+
+.nivel-2 {
+  width: 632px;
+  position: relative;
+}
+
+.nivel-1 {
+  width: 300px;
+  position: relative;
+}
+
+.nivel-1:hover,
+.nivel-2:hover {
+  outline-style: dotted;
+  outline-width: 1px;
+  outline-offset: -5px;
+  outline-color: #110038;
 }
 
 .contenedor__nav__temas {
@@ -354,6 +375,41 @@ ul {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.tendencias__gifs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (300px)[4];
+      grid-template-columns: repeat(4, 300px);
+  grid-gap: 16px 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gif__contenedor--1 {
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
+}
+
+.gif__contenedor--2 {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+}
+
+.tendencia__gif__container {
+  display: inline-block;
+}
+
+.tendencia__gif__container:hover {
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  padding: 4px 4px 0px 4px;
 }
 
 .header__contenedor {
