@@ -7,8 +7,12 @@
  */
 let menu = document.getElementById('desplegarMenu');
 let menu2 = document.getElementById('desplegar2');
-/* let li = document.getElementById('item--tema'); */
+let search = document.getElementById('buscar');
+let mostrarRosa = document.getElementById('busqueda__principal--rosa');
+let busquedaInput = document.getElementById('busqueda__principal--input');
+let lupa = document.getElementById('lupa');
 
+// MENU DESPLEGABLE PARA LOS TEMAS
 
 let text = menu.addEventListener('click', function () {
   document.getElementById('desplegar').classList.add('desplegar')
@@ -19,46 +23,47 @@ let img = menu2.addEventListener('click', function () {
   document.getElementById('desplegar').classList.add('desplegar')
   document.getElementById('desplegar2').classList.add('desplegar')
 })
-/* 
-let img = menu2.addEventListener('click', function () {
-  document.getElementById('desplegar2').classList.add('desplegar')
-}) */
 
 function ocultar() {
   document.getElementById('desplegar').classList.remove('desplegar')
   document.getElementById('desplegar2').classList.remove('desplegar')
 }
 
-/* if (li) {
-  text = document.getElementById('desplegar').classList.remove('desplegar')
+// HOVER PARA LAS OPCIONES DE BUSQUEDA
 
-  img = document.getElementById('desplegar2').classList.remove('desplegar')
-} */
+let opcion = document.getElementById('opciones');
 
-/* function desplegar() {
-  let texto = document.getElementById('desplegar').classList.add('desplegar')
-  let img = document.getElementById('desplegar2').classList.add('desplegar')
-} */
-/* else {
- menu.removeEventListener('click', hide)
- menu2.removeEventListener('click', hide)
- function hide() {
-   document.getElementById('desplegar').classList.remove('desplegar')
-   document.getElementById('desplegar2').classList.remove('desplegar')
- }
-} */
-
-/* while (menu && menu2) {
-  menu.addEventListener('click', desplegar)
-  menu2.addEventListener('click', desplegar)
-  function desplegar() {
-    document.getElementById('desplegar').classList.add('desplegar')
-    document.getElementById('desplegar2').classList.add('desplegar2')
-  }
-  function hide() {
-    document.getElementById('desplegar').classList.remove('desplegar')
-    document.getElementById('desplegar2').classList.remove('desplegar2')
-  }
+let mouseOver = opcion.addEventListener('mouseover', event => {
+  event.target.classList.add('opciones--hover');
+  opcion.classList.remove('opciones--hover')
 }
+)
 
-hide(); */
+let mouseout = opcion.addEventListener('mouseout', event => {
+  event.target.classList.remove('opciones--hover');
+}
+)
+
+// CAPTURAR EL INPUT PARA MOSTAR LAS OPCIONES DE BUSQUEDA
+
+let mostrar = search.addEventListener('input', () => {
+  opcion.classList.add('busqueda__opciones--mostrar')
+  mostrarRosa.classList.add('busqueda__principal--borde')
+  mostrarRosa.classList.add('busqueda__principal--rosa')
+  busquedaInput.classList.add('busqueda__principal--rosa')
+  lupa.classList.add('lupa--input')
+  lupa.classList.remove('lupa')
+})
+
+// CAPTURAR EL CLICK DE LAS OPCIONES PARA OCULTARLAS
+
+let hidden = opcion.addEventListener('click', () => {
+  opcion.classList.remove('busqueda__opciones--mostrar')
+  mostrarRosa.classList.remove('busqueda__principal--borde')
+  mostrarRosa.classList.remove('busqueda__principal--rosa')
+  mostrarRosa.classList.remove('busqueda__principal')
+  mostrarRosa.classList.add('busqueda__principal--rosa--active')
+  busquedaInput.classList.remove('busqueda__principal--rosa')
+  busquedaInput.classList.add('busqueda__principal--active--input')
+})
+

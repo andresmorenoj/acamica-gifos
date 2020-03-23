@@ -13,7 +13,7 @@
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están./////// Número de visitas: 12.765.803</p>
       </div>
       <div class="header__contenedor"><img src="./atomic_html/assets/gifOF_logo.png" alt="Logo">
-        <div class="contenedor__botones"><a class="crear" href="#">Crear Guifos</a>
+        <div class="contenedor__botones"><a class="crear" href="./atomic_html/components/pages/mis_gifs.html">Crear Guifos</a>
           <nav class="contenedor__nav" id="desplegar">
             <div class="contenedor__nav__temas">
               <p id="desplegarMenu">Elegir Tema</p><img id="desplegar2" src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo"/>
@@ -22,16 +22,24 @@
               <li id="item--tema" onclick="ocultar()">Sailor Day</li>
               <li id="item--tema" onclick="ocultar()">Sailor Night</li>
             </ul>
-          </nav><a class="mis-guifos" href="#">Mis Guifos</a>
+          </nav><a class="mis-guifos" href="./atomic_html/components/pages/mis_gifs.html">Mis Guifos</a>
         </div>
       </div>
     </header>
     <section class="busqueda">
       <p class="busqueda__titulo">Buscar</p>
-      <form class="busquedad__form">
-        <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-        <label><img src="./atomic_html/assets/lupa_inactive.svg" alt="lupa inactiva">
-          <input class="busquedad--boton" type="submit" value="Buscar">
+      <form class="busqueda__form">
+        <div class="busqueda__contenedor">
+          <input class="texto__busqueda" id="buscar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+          <label class="busqueda__principal" id="busqueda__principal--rosa">
+            <div class="lupa" id="lupa"></div>
+            <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar">
+          </label>
+        </div>
+        <label class="busqueda__opciones" id="opciones">
+          <input class="opciones" type="button" value="Hola 1">
+          <input class="opciones" type="button" value="Hola 2">
+          <input class="opciones" type="button" value="Hola 3">
         </label>
       </form>
     </section>
