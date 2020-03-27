@@ -15,18 +15,18 @@ let lupa = document.getElementById('lupa');
 // MENU DESPLEGABLE PARA LOS TEMAS
 
 let text = menu.addEventListener('click', function () {
-  document.getElementById('desplegar').classList.add('desplegar')
-  document.getElementById('desplegar2').classList.add('desplegar')
+  document.getElementById('desplegar').classList.toggle('desplegar')
+  document.getElementById('desplegar2').classList.toggle('desplegar')
 })
 
 let img = menu2.addEventListener('click', function () {
-  document.getElementById('desplegar').classList.add('desplegar')
-  document.getElementById('desplegar2').classList.add('desplegar')
+  document.getElementById('desplegar').classList.toggle('desplegar')
+  document.getElementById('desplegar2').classList.toggle('desplegar')
 })
 
 function ocultar() {
-  document.getElementById('desplegar').classList.remove('desplegar')
-  document.getElementById('desplegar2').classList.remove('desplegar')
+  document.getElementById('desplegar').classList.toggle('desplegar')
+  document.getElementById('desplegar2').classList.toggle('desplegar')
 }
 
 // HOVER PARA LAS OPCIONES DE BUSQUEDA
@@ -65,5 +65,34 @@ let hidden = opcion.addEventListener('click', () => {
   mostrarRosa.classList.add('busqueda__principal--rosa--active')
   busquedaInput.classList.remove('busqueda__principal--rosa')
   busquedaInput.classList.add('busqueda__principal--active--input')
+})
+
+// CAPTURAR EL NÚMERO DE VISITAS A LA PÁGINA
+
+/* let contarVisitas = 12765803;
+
+const numeroVisitas = () => {
+  let acumulador = contarVisitas + 1;
+
+  alert(acumulador);
+}
+
+do {
+  const numeroVisitas = () => {
+    numeroVisitas += 1;
+
+    alert(numeroVisitas);
+  }
+
+  alert(acumulador);
+} while (numeroVisitas) */
+
+let contarVisitas = 12765803;
+
+let body = document.getElementById('body');
+
+let contarVisita = body.addEventListener('onload', () => {
+  contarVisitas += 1
+  console.log(contarVisitas);
 })
 
