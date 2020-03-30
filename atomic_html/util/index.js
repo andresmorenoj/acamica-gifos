@@ -7,7 +7,7 @@
  */
 let menu = document.getElementById('desplegarMenu');
 let menu2 = document.getElementById('desplegar2');
-let search = document.getElementById('buscar');
+let buscar = document.getElementById('buscar');
 let mostrarRosa = document.getElementById('busqueda__principal--rosa');
 let busquedaInput = document.getElementById('busqueda__principal--input');
 let lupa = document.getElementById('lupa');
@@ -46,7 +46,7 @@ let mouseout = opcion.addEventListener('mouseout', event => {
 
 // CAPTURAR EL INPUT PARA MOSTAR LAS OPCIONES DE BUSQUEDA
 
-let mostrar = search.addEventListener('input', () => {
+let mostrar = buscar.addEventListener('input', () => {
   opcion.classList.add('busqueda__opciones--mostrar')
   mostrarRosa.classList.add('busqueda__principal--borde')
   mostrarRosa.classList.add('busqueda__principal--rosa')
@@ -58,6 +58,17 @@ let mostrar = search.addEventListener('input', () => {
 // CAPTURAR EL CLICK DE LAS OPCIONES PARA OCULTARLAS
 
 let hidden = opcion.addEventListener('click', () => {
+  opcion.classList.remove('busqueda__opciones--mostrar')
+  mostrarRosa.classList.remove('busqueda__principal--borde')
+  mostrarRosa.classList.remove('busqueda__principal--rosa')
+  mostrarRosa.classList.remove('busqueda__principal')
+  mostrarRosa.classList.add('busqueda__principal--rosa--active')
+  busquedaInput.classList.remove('busqueda__principal--rosa')
+  busquedaInput.classList.add('busqueda__principal--active--input')
+})
+
+let submit = document.getElementById('busqueda__principal--input')
+let hiddenSubmit = submit.addEventListener('click', () => {
   opcion.classList.remove('busqueda__opciones--mostrar')
   mostrarRosa.classList.remove('busqueda__principal--borde')
   mostrarRosa.classList.remove('busqueda__principal--rosa')

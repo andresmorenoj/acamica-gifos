@@ -324,6 +324,11 @@ ul {
   height: 34px;
 }
 
+.sugerencia__gifs__container .img--gif {
+  width: 280px;
+  height: 280px;
+}
+
 .sugerencia__gifs__container .img--gif:hover {
   outline-style: dotted;
   outline-width: 1px;
@@ -391,6 +396,12 @@ ul {
 }
 
 /* ------------------------------------- */
+.pruebas {
+  width: 900px;
+  height: 1000px;
+  background-color: red;
+}
+
 /* -----------  ESTILOS PARA MOLECULAS -----------  */
 /* ESTILOS HEADER */
 .contenedor__nav__temas {

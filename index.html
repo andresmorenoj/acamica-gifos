@@ -30,10 +30,10 @@
       <p class="busqueda__titulo">Buscar</p>
       <form class="busqueda__form">
         <div class="busqueda__contenedor">
-          <input class="texto__busqueda" id="buscar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+          <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
           <label class="busqueda__principal" id="busqueda__principal--rosa">
             <div class="lupa" id="lupa"></div>
-            <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar">
+            <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar" onclick="search()">
           </label>
         </div>
         <label class="busqueda__opciones" id="opciones">
@@ -46,25 +46,25 @@
     <section class="sugerencia">
       <h3>Hoy te sugerimos:</h3>
       <div class="sugerencia__gifs">
-        <div class="sugerencia__gifs__container">
+        <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
             <p>#Jonathanvanness</p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif" src="./atomic_html/assets/280X280.jpg" alt="gif1"/><a href="#">Ver más...</a>
+          </div><img class="img--gif" alt="gif1"/><a href="#" id="verMas">Ver más...</a>
         </div>
-        <div class="sugerencia__gifs__container">
+        <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
             <p>#SailorMercury</p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif" src="./atomic_html/assets/280X280.jpg" alt="gif2"/><a href="#">Ver más...</a>
+          </div><img class="img--gif" alt="gif2"/><a href="#" id="verMas">Ver más...</a>
         </div>
-        <div class="sugerencia__gifs__container">
+        <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
             <p>#FabFive</p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif" src="./atomic_html/assets/280X280.jpg" alt="gif3"/><a href="#">Ver más...</a>
+          </div><img class="img--gif" alt="gif3"/><a href="#" id="verMas">Ver más...</a>
         </div>
-        <div class="sugerencia__gifs__container">
+        <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
             <p>#Unicorns&amp;Rainbows</p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif" src="./atomic_html/assets/280X280.jpg" alt="gif4"/><a href="#">Ver más...</a>
+          </div><img class="img--gif" alt="gif4"/><a href="#" id="verMas">Ver más...</a>
         </div>
       </div>
     </section>
@@ -123,6 +123,8 @@
         </div>
       </div>
     </section>
+    <div class="pruebas" id="pruebas"></div>
     <script src="./atomic_html/util/index.js"></script>
+    <script src="./atomic_html/util/home.js"></script>
   </body>
 </html>
