@@ -268,6 +268,26 @@ ul {
   outline-offset: -4px;
 }
 
+.mostarOpciones {
+  display: none;
+}
+
+.mostarOpciones p {
+  font-family: "Chakra Petch", sans-serif;
+  padding: 12px 7px 8px 7px;
+  background: #4180f6;
+  border: 1px solid #4c2f99;
+  -webkit-box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+  color: #ffffff;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.mostarOpcionesBlock {
+  display: block;
+}
+
 /* ------------------------------------- */
 /* ESTILOS SECCIÓN SUGERENCIAS */
 .sugerencia h3 {

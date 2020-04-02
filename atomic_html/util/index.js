@@ -78,32 +78,4 @@ let hiddenSubmit = submit.addEventListener('click', () => {
   busquedaInput.classList.add('busqueda__principal--active--input')
 })
 
-// CAPTURAR EL NÚMERO DE VISITAS A LA PÁGINA
-
-/* let contarVisitas = 12765803;
-
-const numeroVisitas = () => {
-  let acumulador = contarVisitas + 1;
-
-  alert(acumulador);
-}
-
-do {
-  const numeroVisitas = () => {
-    numeroVisitas += 1;
-
-    alert(numeroVisitas);
-  }
-
-  alert(acumulador);
-} while (numeroVisitas) */
-
-let contarVisitas = 12765803;
-
-let body = document.getElementById('body');
-
-let contarVisita = body.addEventListener('onload', () => {
-  contarVisitas += 1
-  console.log(contarVisitas);
-})
 

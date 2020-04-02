@@ -30,18 +30,23 @@
       <p class="busqueda__titulo">Buscar</p>
       <form class="busqueda__form">
         <div class="busqueda__contenedor">
-          <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+          <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" onkeyup="autocompletarBusqueda()">
           <label class="busqueda__principal busqueda__principal--rosa">
             <div class="lupa" id="lupa"></div>
             <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar" onclick="search()">
           </label>
         </div>
         <label class="busqueda__opciones" id="opciones">
-          <input class="opciones" type="button" value="Hola 1">
-          <input class="opciones" type="button" value="Hola 2">
-          <input class="opciones" type="button" value="Hola 3">
+          <input class="opciones" type="button" onclick="enviarOpcionesBusqueda(0)">
+          <input class="opciones" type="button" onclick="enviarOpcionesBusqueda(1)">
+          <input class="opciones" type="button" onclick="enviarOpcionesBusqueda(2)">
         </label>
       </form>
+      <div class="mostarOpciones" id="mostarOpciones">
+        <p class="mostarOpcionesTexto"></p>
+        <p class="mostarOpcionesTexto"></p>
+        <p class="mostarOpcionesTexto"></p>
+      </div>
     </section>
     <section class="sugerencia">
       <h3>Hoy te sugerimos:</h3>

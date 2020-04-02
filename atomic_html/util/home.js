@@ -28,6 +28,12 @@ console.log(' ver_mas3 ', ver_mas3);
 let ver_mas4 = document.getElementsByClassName('verMas4')
 console.log(' ver_mas4', ver_mas4);
 
+let opciones = document.getElementsByClassName('opciones')
+
+let mostar_opciones = document.getElementById('mostarOpciones')
+
+let mostar_opciones_texto = document.getElementsByClassName('mostarOpcionesTexto')
+
 
 ///////////////////////
 
@@ -42,7 +48,7 @@ function cargaDelBody() { // Función para detectar la carga del body y llamar a
 // ENDPOINT SUGERENCIAS
 function getSugerencias() {
   const Sugerencias =
-    fetch('http://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=4')
+    fetch('http://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=10')
       .then(response => response.json())
       .then(resData => {
         //console.log(resData);
@@ -59,6 +65,16 @@ function getSugerencias() {
             //console.log(titulo_sugerencia_final);
 
             gif_titulo_sugerencia[k].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
+          }
+
+
+          for (let t = 0; t < gif_tendencia.length; t++) {
+            gif_tendencia[i].src = url_sugerencia
+          }
+
+          for (let m = i; m < gif_titulo_tendencia.length; m++) {
+            let titulo_sugerencia_final = titulo_sugerencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
+            gif_titulo_tendencia[m].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
         }
         return resData
@@ -191,6 +207,7 @@ let verMasBuscar4 = () => {
 let search = () => {
   let buscar = document.getElementById('buscar').value
   event.preventDefault();
+  titulo_tendencia.textContent = buscar
   //console.log(buscar);
   getTendencias(buscar); //Llamada a la función del Endpoint
 }
@@ -227,3 +244,53 @@ function getTendencias(search) {
 }
 
 ///////////////////////
+
+//ENDPOINT SUGERENCIAS DE BÚSQUEDAS
+
+//ENDPOINT AUTOCOMPLETAR
+function autocompletarBusqueda() {
+  console.log('funciona');
+  let buscar_sugerencias = document.getElementById('buscar').value
+  console.log(buscar_sugerencias);
+  autocompletar(buscar_sugerencias)
+
+  function autocompletar(search) {
+    const URL_SUGERENCIAS = 'http://api.giphy.com/v1/gifs/search/tags?q=' + search + '&api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=3'
+    console.log(URL_SUGERENCIAS);
+
+    const Sugerencias =
+      fetch(URL_SUGERENCIAS)
+        .then(response => response.json())
+        .then(resData => {
+          console.log(resData);
+          for (let i = 0; i < resData.data.length; i++) {
+            for (let j = i; j < opciones.length; j++) {
+              opciones[j].value = resData.data[i].name
+            }
+          }
+          return resData
+        })
+        .catch((error) => {
+          return error
+        })
+    return Sugerencias
+  }
+}
+
+function enviarOpcionesBusqueda(posicion) {
+  console.log('aqui imprimo ', opciones[posicion].value);
+
+  let buscar_autocomepletar = document.getElementById('buscar')
+  buscar_autocomepletar.value = opciones[posicion].value
+  titulo_tendencia.textContent = opciones[posicion].value
+  getTendencias(buscar_autocomepletar.value)
+  console.log(opciones);
+
+  // Mostrando las sugerencias de búsqueda
+  for (let i = 0; i < mostar_opciones_texto.length; i++) {
+    console.log('Aqui entro ', opciones);
+    mostar_opciones_texto[i].textContent = opciones[i].value;
+    console.log(mostar_opciones_texto[i]);
+    mostar_opciones.classList.toggle('mostarOpcionesBlock')
+  }
+}
