@@ -2,16 +2,32 @@
 
 /* let body = document.getElementsByTagName('body') */
 let gif_sugerencia = document.getElementsByClassName('img--gif--sugerencia')
-console.log(gif_sugerencia);
+console.log('gif_sugerencia ', gif_sugerencia);
 
 let gif_titulo_sugerencia = document.getElementsByClassName('gif--titulo--sugerencia')
-console.log(gif_titulo_sugerencia);
+console.log('gif_titulo_sugerencia ', gif_titulo_sugerencia);
 
 let gif_tendencia = document.getElementsByClassName('img--gif--tendencias')
-console.log(gif_tendencia);
+console.log('gif_tendencia ', gif_tendencia);
 
 let gif_titulo_tendencia = document.getElementsByClassName('gif--titulo--tendencia')
-console.log(gif_titulo_tendencia);
+console.log('gif_titulo_tendencia ', gif_titulo_tendencia);
+
+let titulo_tendencia = document.getElementById('titulo__tendencia')
+console.log(titulo_tendencia);
+
+let ver_mas1 = document.getElementsByClassName('verMas1')
+console.log(' ver_mas1 ', ver_mas1);
+
+let ver_mas2 = document.getElementsByClassName('verMas2')
+console.log(' ver_mas2 ', ver_mas2);
+
+let ver_mas3 = document.getElementsByClassName('verMas3')
+console.log(' ver_mas3 ', ver_mas3);
+
+let ver_mas4 = document.getElementsByClassName('verMas4')
+console.log(' ver_mas4', ver_mas4);
+
 
 ///////////////////////
 
@@ -29,7 +45,7 @@ function getSugerencias() {
     fetch('http://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=4')
       .then(response => response.json())
       .then(resData => {
-        console.log(resData);
+        //console.log(resData);
         for (let i = 0; i < resData.data.length; i++) {
           let url_sugerencia = resData.data[i].images.downsized.url
           let titulo_sugerencia_completo = resData.data[i].title
@@ -40,7 +56,7 @@ function getSugerencias() {
 
           for (let k = i; k < gif_titulo_sugerencia.length; k++) {
             let titulo_sugerencia_final = titulo_sugerencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
-            console.log(titulo_sugerencia_final);
+            //console.log(titulo_sugerencia_final);
 
             gif_titulo_sugerencia[k].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
@@ -55,31 +71,151 @@ function getSugerencias() {
 
 ///////////////////////
 
+// FUNCIONAMIENTO BOTÓN 'VER MÁS' SECCIÓN SUGERENCIAS
+
+let verMasBuscar1 = () => {
+  if (ver_mas1[0].click) {
+    let padre = ver_mas1[0].parentNode
+    console.log(padre);
+
+    let primerHijo = padre.firstChild.nextElementSibling
+    console.log(primerHijo);
+
+    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
+    console.log(primerHijoDelHijo.textContent.replace('#', ''));
+
+    let search_verMas1 = () => {
+      let buscar_verMas1 = document.getElementById('buscar')
+      buscar_verMas1.value = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(buscar_verMas1.value);
+
+      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(titulo_tendencia.textContent);
+
+      event.preventDefault();
+      //console.log(buscar);
+      getTendencias(buscar_verMas1.value); //Llamada a la función del Endpoint
+    }
+    search_verMas1()
+
+  }
+}
+
+let verMasBuscar2 = () => {
+  if (ver_mas2[0].click) {
+    let padre = ver_mas2[0].parentNode
+    console.log(padre);
+
+    let primerHijo = padre.firstChild.nextElementSibling
+    console.log(primerHijo);
+
+    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
+    console.log(primerHijoDelHijo.textContent.replace('#', ''));
+
+    let search_verMas2 = () => {
+      let buscar_verMas2 = document.getElementById('buscar')
+      buscar_verMas2.value = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(buscar_verMas2.value);
+
+      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(titulo_tendencia.textContent);
+
+      event.preventDefault();
+      //console.log(buscar);
+      getTendencias(buscar_verMas2.value); //Llamada a la función del Endpoint
+    }
+    search_verMas2()
+  }
+}
+
+
+let verMasBuscar3 = () => {
+  if (ver_mas3[0].click) {
+    let padre = ver_mas3[0].parentNode
+    console.log(padre);
+
+    let primerHijo = padre.firstChild.nextElementSibling
+    console.log(primerHijo);
+
+    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
+    console.log(primerHijoDelHijo.textContent.replace('#', ''));
+
+    let search_verMas3 = () => {
+      let buscar_verMas3 = document.getElementById('buscar')
+      buscar_verMas3.value = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(buscar_verMas3.value);
+
+      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(titulo_tendencia.textContent);
+
+      event.preventDefault();
+      //console.log(buscar);
+      getTendencias(buscar_verMas3.value); //Llamada a la función del Endpoint
+    }
+    search_verMas3()
+  }
+}
+
+
+let verMasBuscar4 = () => {
+  if (ver_mas4[0].click) {
+    let padre = ver_mas4[0].parentNode
+    console.log(padre);
+
+    let primerHijo = padre.firstChild.nextElementSibling
+    console.log(primerHijo);
+
+    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
+    console.log(primerHijoDelHijo.textContent.replace('#', ''));
+
+    let search_verMas4 = () => {
+      let buscar_verMas4 = document.getElementById('buscar')
+      buscar_verMas4.value = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(buscar_verMas4.value);
+
+      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      console.log(titulo_tendencia.textContent);
+
+      event.preventDefault();
+      //console.log(buscar);
+      getTendencias(buscar_verMas4.value); //Llamada a la función del Endpoint
+    }
+    search_verMas4()
+  }
+}
+///////////////////////
+
 // ENDPOINT PARA CAPTURAR LA BÚSQUEDA DEL USUARIO Y MOSTRARLA EN LA SECCIÓN DE TENDENCIAS
 
 //Capturar la búsqueda del usuario y llamar el Endpoint
 let search = () => {
   let buscar = document.getElementById('buscar').value
   event.preventDefault();
-  console.log(buscar);
+  //console.log(buscar);
   getTendencias(buscar); //Llamada a la función del Endpoint
 }
 
 //ENDPOINT TENDENCIAS
 function getTendencias(search) {
+  const URL_TENDENCIA = 'http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=10'
+  console.log(URL_TENDENCIA);
+
   const Tendencias =
-    fetch('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=10')
+    fetch(URL_TENDENCIA)
       .then(response => response.json())
       .then(resData => {
         console.log(resData);
         for (let i = 0; i < resData.data.length; i++) {
           let url_tendencia = resData.data[i].images.downsized.url
-          let titulo_tendencia = resData.data[i].title
+          let titulo_tendencia_completo = resData.data[i].title
+
           for (let j = 0; j < gif_tendencia.length; j++) {
             gif_tendencia[i].src = url_tendencia
           }
+
           for (k = i; k < gif_titulo_tendencia.length; k++) {
-            gif_titulo_tendencia[k].textContent = `#${titulo_tendencia} `
+            let titulo_tendencia_final = titulo_tendencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
+            gif_titulo_tendencia[k].textContent = `#${titulo_tendencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
         }
         return resData

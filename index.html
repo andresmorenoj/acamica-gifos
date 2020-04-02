@@ -31,7 +31,7 @@
       <form class="busqueda__form">
         <div class="busqueda__contenedor">
           <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-          <label class="busqueda__principal" id="busqueda__principal--rosa">
+          <label class="busqueda__principal busqueda__principal--rosa">
             <div class="lupa" id="lupa"></div>
             <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar" onclick="search()">
           </label>
@@ -48,28 +48,28 @@
       <div class="sugerencia__gifs">
         <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
-            <p class="gif--titulo--sugerencia"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif--sugerencia" alt="gif1"/><a href="#" id="verMas">Ver más...</a>
+            <p class="gif--titulo--sugerencia gif--titulo--sugerencia--buscar"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
+          </div><img class="img--gif--sugerencia" alt="gif1"/><a class="verMas1" href="#" onclick="verMasBuscar1()">Ver más...</a>
         </div>
         <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
-            <p class="gif--titulo--sugerencia"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif--sugerencia" alt="gif2"/><a href="#" id="verMas">Ver más...</a>
+            <p class="gif--titulo--sugerencia gif--titulo--sugerencia--buscar"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
+          </div><img class="img--gif--sugerencia" alt="gif2"/><a class="verMas2" href="#" onclick="verMasBuscar2()">Ver más...</a>
         </div>
         <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
-            <p class="gif--titulo--sugerencia"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif--sugerencia" alt="gif3"/><a href="#" id="verMas">Ver más...</a>
+            <p class="gif--titulo--sugerencia gif--titulo--sugerencia--buscar"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
+          </div><img class="img--gif--sugerencia" alt="gif3"/><a class="verMas3" href="#" onclick="verMasBuscar3()">Ver más...</a>
         </div>
         <div class="sugerencia__gifs__container" id="img-gif-prueba">
           <div class="sugerencia__gif--titulo">
-            <p class="gif--titulo--sugerencia"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
-          </div><img class="img--gif--sugerencia" alt="gif4"/><a href="#" id="verMas">Ver más...</a>
+            <p class="gif--titulo--sugerencia gif--titulo--sugerencia--buscar"></p><img src="./atomic_html/assets/button_close.svg" alt="boton con una x para cerrar"/>
+          </div><img class="img--gif--sugerencia" alt="gif4"/><a class="verMas4" href="#" onclick="verMasBuscar4()">Ver más...</a>
         </div>
       </div>
     </section>
     <section class="tendencia">
-      <h3>Tendencias:</h3>
+      <h3 id="titulo__tendencia">Tendencias:</h3>
       <div class="tendencias__gifs">
         <div class="gif__contenedor--1 gif__contenedor--auto">
           <div class="tendencia__gif__container"><img class="288X298.jpg img--gif--tendencias" alt="gifs tendencias"/>
