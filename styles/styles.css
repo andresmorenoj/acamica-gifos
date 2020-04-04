@@ -223,7 +223,7 @@ ul {
   position: relative;
   top: 3px;
   width: 15px;
-  background-image: url("../../../atomic_html/assets/lupa_inactive.svg");
+  background-image: url("../atomic_html/assets/lupa_inactive.svg");
   background-repeat: no-repeat;
   height: 20px;
   cursor: pointer;
@@ -234,7 +234,7 @@ ul {
   position: relative;
   top: 3px;
   width: 15px;
-  background-image: url("../../../atomic_html/assets/lupa.svg");
+  background-image: url("../atomic_html/assets/lupa.svg");
   background-repeat: no-repeat;
   height: 20px;
   cursor: pointer;
@@ -383,8 +383,7 @@ ul {
   display: none;
 }
 
-.gif__contenedor--1:hover p,
-.gif__contenedor--2:hover p {
+.tendencias__gifs__contenedor:hover p {
   display: block;
   background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
   background-image: linear-gradient(to left, #f7c9f3, #4180f6);
@@ -405,7 +404,15 @@ ul {
   height: 300px;
 }
 
-/* .nivel-2 {
+/* .img--gif--tendencias:hover {
+  outline-style: dotted;
+  outline-width: 1px;
+  outline-offset: -5px;
+  outline-color: $azulGeneral;
+  position: relative;
+} */
+/* 
+.nivel-2 {
   max-width: 632px;
   position: relative;
 }
@@ -414,14 +421,13 @@ ul {
   width: 300px;
   position: relative;
 } */
-.nivel-1:hover,
+/* .nivel-1:hover,
 .nivel-2:hover {
   outline-style: dotted;
   outline-width: 1px;
   outline-offset: -5px;
-  outline-color: #110038;
-}
-
+  outline-color: $azulGeneral;
+} */
 /* ------------------------------------- */
 .pruebas {
   width: 900px;
@@ -558,11 +564,24 @@ ul {
 
 /* ------------------------------------- */
 /* ESTILOS SECCIÓN TENDENCIAS*/
+.tendencias__gifs__contenedor {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* .tendencias__gifs {
+  display: grid;
+  grid-template-columns: 300px;
+} */
 .tendencias__gifs {
   display: -ms-grid;
   display: grid;
+  /*  grid-template-columns: repeat(auto-fit, minmax(300px, 600px)); */
   -ms-grid-columns: (300px)[4];
       grid-template-columns: repeat(4, 300px);
+  /*   grid-auto-rows: repeat(4, 300px); */
+  /*   grid-auto-flow: column; */
   grid-gap: 16px 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -575,24 +594,23 @@ ul {
   justify-content: space-between; */
 }
 
-/* .gif__contenedor--1 {
-  grid-column-end: span 1;
+.gif__contenedor--1 {
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
 }
 
 .gif__contenedor--2 {
-  grid-column-end: span 2;
-}
- */
-.gif__contenedor--auto {
-  -ms-grid-column-span: auto;
-      grid-column-end: span auto;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
 }
 
-.tendencia__gif__container {
+/* .gif__contenedor--auto {
+  grid-column-end: span auto;
+} */
+/* .tendencia__gif__container {
   display: inline-block;
-  width: 100%;
-}
-
+  width: fit-content;
+} */
 .tendencia__gif__container:hover {
   background: #e6e6e6;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
@@ -651,6 +669,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   margin-top: 64px;
+  overflow: hidden;
 }
 
 /* ------------------------------------- */

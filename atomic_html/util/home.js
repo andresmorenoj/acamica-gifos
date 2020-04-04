@@ -10,6 +10,10 @@ console.log('gif_titulo_sugerencia ', gif_titulo_sugerencia);
 let gif_tendencia = document.getElementsByClassName('img--gif--tendencias')
 console.log('gif_tendencia ', gif_tendencia);
 
+let gif_tendencia_contenedor = document.getElementsByClassName('tendencias__gifs__contenedor')
+console.log('gif_tendencia_contenedor', gif_tendencia_contenedor);
+
+
 let gif_titulo_tendencia = document.getElementsByClassName('gif--titulo--tendencia')
 console.log('gif_titulo_tendencia ', gif_titulo_tendencia);
 
@@ -51,7 +55,7 @@ function getSugerencias() {
     fetch('http://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=10')
       .then(response => response.json())
       .then(resData => {
-        //console.log(resData);
+        console.log('Esta es la data de tendencias', resData);
         for (let i = 0; i < resData.data.length; i++) {
           let url_sugerencia = resData.data[i].images.downsized.url
           let titulo_sugerencia_completo = resData.data[i].title
@@ -76,6 +80,26 @@ function getSugerencias() {
             let titulo_sugerencia_final = titulo_sugerencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
             gif_titulo_tendencia[m].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
+
+          // TAMAÑO DINÁMICO DE LA ETIQUE <img>
+
+          console.log(resData.data[i].images.downsized.width);
+          if (resData.data[i].images.downsized.width <= 450) {
+            gif_tendencia[i].width = 300
+            gif_tendencia_contenedor[i].classList.add('gif__contenedor--1')
+            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--2')
+
+            console.log('gif con width de: ', gif_tendencia[i].width);
+
+          } else if (resData.data[i].images.downsized.width >= 451) {
+            gif_tendencia[i].width = 632
+            gif_tendencia_contenedor[i].classList.add('gif__contenedor--2')
+            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--1')
+
+            console.log('gif con width de: ', gif_tendencia[i].width, gif_tendencia[i].classList);
+          }
+
+          ///////////////////////
         }
         return resData
       })
@@ -234,6 +258,29 @@ function getTendencias(search) {
             let titulo_tendencia_final = titulo_tendencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
             gif_titulo_tendencia[k].textContent = `#${titulo_tendencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
+
+          // TAMAÑO DINÁMICO DE LA ETIQUE <img>
+
+          console.log(resData.data[i].images.downsized.width);
+          if (resData.data[i].images.downsized.width <= 450) {
+            gif_tendencia[i].width = 300
+            /* gif_tendencia[i].classList.add('gif__contenedor--1') */
+            gif_tendencia_contenedor[i].classList.add('gif__contenedor--1')
+            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--2')
+
+            console.log('gif con width de: ', gif_tendencia[i].width);
+
+          } else if (resData.data[i].images.downsized.width >= 451) {
+            gif_tendencia[i].width = 632
+            /*  gif_tendencia[i].classList.add('gif__contenedor--2') */
+            gif_tendencia_contenedor[i].classList.add('gif__contenedor--2')
+            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--1')
+
+            console.log('gif con width de: ', gif_tendencia[i].width, gif_tendencia[i].classList);
+          }
+
+          ///////////////////////
+
         }
         return resData
       })
@@ -294,3 +341,4 @@ function enviarOpcionesBusqueda(posicion) {
     mostar_opciones.classList.toggle('mostarOpcionesBlock')
   }
 }
+

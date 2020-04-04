@@ -47,6 +47,10 @@ let mouseout = opcion.addEventListener('mouseout', event => {
 // CAPTURAR EL INPUT PARA MOSTAR LAS OPCIONES DE BUSQUEDA
 
 let mostrar = buscar.addEventListener('input', () => {
+  console.log('Aqui empieso a escribir');
+  console.log(lupa);
+
+
   opcion.classList.add('busqueda__opciones--mostrar')
   mostrarRosa.classList.add('busqueda__principal--borde')
   mostrarRosa.classList.add('busqueda__principal--rosa')
