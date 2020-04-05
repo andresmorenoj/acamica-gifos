@@ -146,7 +146,7 @@ ul {
   padding: 8px 15px 8px 0;
 }
 
-.mis-guifos::first-letter {
+.mis-guifos:hover::first-letter {
   text-decoration: underline;
 }
 
@@ -211,6 +211,10 @@ ul {
   outline: none;
   cursor: pointer;
   color: #b4b4b4;
+}
+
+.busquedad--boton {
+  margin-left: 5px;
 }
 
 /* CLASE QUE SE AGREGA DESDE JS PARA EL ESTADO INPUT DEL BOTON */
@@ -395,7 +399,7 @@ ul {
   width: 100%;
   margin: 0;
   position: relative;
-  bottom: 10px;
+  bottom: 5px;
   padding: 7px;
 }
 
@@ -454,8 +458,7 @@ ul {
   background: #e6e6e6;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px -2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px -2px 0 0 #ffffff;
-  padding: 9px 14px 9px 10px;
-  padding: 15px 12px;
+  padding: 12px 6px 12px 12px;
   margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -467,7 +470,7 @@ ul {
   border: 1px solid #808080;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px -2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px -2px 0 0 #ffffff;
-  padding: 9px 14px 9px 10px;
+  padding: 9px 7px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -475,7 +478,11 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 3px;
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 6px;
+  width: 102px;
+  height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,7 +509,7 @@ ul {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-  padding: 9px 14px 9px 10px;
+  padding: 9px 7px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -511,6 +518,10 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 3px;
+  margin-right: 10px;
+  margin-top: 6px;
+  width: 102px;
+  height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
