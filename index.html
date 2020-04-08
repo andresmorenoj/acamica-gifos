@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link id="temas" rel="stylesheet" href="./styles/normal.css">
   </head>
   <body id="body" onload="cargaDelBody()">
     <header class="header">
@@ -19,8 +20,8 @@
               <p id="desplegarMenu">Elegir Tema</p><img id="desplegar2" src="./atomic_html/assets/dropdown.svg" alt="flecha hacia abajo"/>
             </div>
             <ul>
-              <li id="item--tema" onclick="ocultar()">Sailor Day</li>
-              <li id="item--tema" onclick="ocultar()">Sailor Night</li>
+              <li class="opcionesTemas" onclick="ocultar()">Sailor Day</li>
+              <li class="opcionesTemas" onclick="ocultar()">Sailor Night</li>
             </ul>
           </nav><a class="mis-guifos" href="./atomic_html/components/pages/mis_gifs.html">Mis Guifos</a>
         </div>
@@ -30,7 +31,7 @@
       <p class="busqueda__titulo">Buscar</p>
       <form class="busqueda__form">
         <div class="busqueda__contenedor">
-          <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" onkeyup="autocompletarBusqueda()">
+          <input class="texto__busqueda" id="buscar" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" onkeyup="autocompletarBusqueda()" autocomplete="off">
           <label class="busqueda__principal" id="busqueda__principal--rosa">
             <div class="lupa" id="lupa"></div>
             <input class="busquedad--boton" id="busqueda__principal--input" type="submit" value="Buscar" onclick="search()">
