@@ -101,6 +101,119 @@ html {
   cursor: pointer;
 }
 
+.camara_titulo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.mostrar_camara_grabar {
+  width: 832px;
+  height: 434px;
+  margin: 8px 17px 0 11px;
+  background: #ffffff;
+  padding: 1px;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+}
+
+.mostrar_camara_grabar video {
+  padding: 1px 0 1px 1px;
+  width: 827px;
+  height: 431px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mostrar_camara_icono {
+  width: 36px;
+  height: 36px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  background-image: url("../atomic_html/assets/camera.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.mostrar_camara_capturar {
+  text-align: center;
+  width: 144px;
+  height: 36px;
+  margin: 0;
+  padding: 8px 0 8px 0;
+  background: #f7c9f3;
+  border-left: 0;
+  border-top: 1px solid #110038;
+  border-right: 1px solid #110038;
+  border-bottom: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.mostrar_camara_icono_listo {
+  width: 36px;
+  height: 36px;
+  background: #ff6161;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+  background-image: url("../atomic_html/assets/recording.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.mostrar_camara_capturar_listo {
+  color: #ffffff;
+  text-align: center;
+  width: 144px;
+  height: 36px;
+  margin: 0;
+  padding: 8px 0 8px 0;
+  background: #ff6161;
+  border-left: 0;
+  border-top: 1px solid #110038;
+  border-right: 1px solid #110038;
+  border-bottom: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.contenedor_finalizar_repetir {
+  text-align: center;
+  width: 144px;
+  height: 36px;
+  margin: 0;
+  margin-right: 14px;
+  padding: 8px 0 8px 0;
+  background: #ffffff;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.contenedor_finalizar_subir {
+  text-align: center;
+  width: 144px;
+  height: 36px;
+  margin: 0;
+  padding: 8px 0 8px 0;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
 .nivel-2 {
   width: 632px;
   position: relative;
@@ -153,6 +266,68 @@ html {
   margin-top: 28px;
 }
 
+.mostrar_camara_titulo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 24px;
+  padding-right: 10px;
+  padding-left: 6px;
+  padding-top: 4.4px;
+  padding-bottom: 2.6px;
+}
+
+.contenedor_capturar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 21px 16px 16px 0;
+}
+
+.contenedor_capturar_listo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 21px 16px 16px 0;
+}
+
+.contenedor_finalizar_botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 21px 16px 16px 0;
+}
+
+.mostrar_camara_reloj,
+.mostrar_camara_grabando {
+  display: none;
+}
+
 .mis--gifs__contenedor {
   display: -ms-grid;
   display: grid;
@@ -182,6 +357,7 @@ html {
 }
 
 .crear-gifs {
+  display: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -193,7 +369,23 @@ html {
   margin-top: 5.313rem;
 }
 
+.mostrar_camara {
+  /*  width: 860px; */
+  height: 538px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5.313rem;
+  font-family: "Chakra Petch", sans-serif;
+}
+
 .mis--gifs {
+  display: none;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
