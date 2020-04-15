@@ -2,13 +2,15 @@
 let contenedor_listo = document.getElementById('contenedor_capturar_listo')
 let listo = document.getElementById('mostrar_camara_capturar_listo')
 let video = document.getElementById('grabar_camara')
+let reproducir_gif = document.getElementById('reproducir_gif')
 let finalizar_botones = document.getElementById('contenedor_finalizar_botones')
 let capturar = document.getElementById('mostrar_camara_capturar')
 capturar.textContent = 'Capturar'
 let contenedor_capturar = document.getElementById('contenedor_capturar')
 let subir_gif = document.getElementById('contenedor_finalizar_subir')
 let repetir_captura = document.getElementById('contenedor_finalizar_repetir')
-let url_gif = null
+let reproducir_gif_img = document.getElementById('reproducir_gif_img')
+
 
 
 ////////////////////////////
@@ -69,7 +71,11 @@ repetir_captura.addEventListener('click', () => {
   videoGenerate()
   finalizar_botones.style.display = 'none'
   contenedor_capturar.style.display = ''
+  video.style.display = ''
+  reproducir_gif.style.display = ''
   capturar.textContent = 'Creando Guifo'
+
+
   setTimeout(() => {
     contenedor_capturar.style.display = 'none'
     contenedor_listo.style.display = ''
@@ -95,7 +101,8 @@ function videoGenerate() {
         type: "gif",
         frameRate: 1,
         quality: 10,
-        width: 360,
+        width: 827,
+        height: 431,
         hidden: 240,
         onGifRecordingStarted: function () {
           console.log("started");
@@ -104,25 +111,41 @@ function videoGenerate() {
       recorder.startRecording();
       listo.addEventListener('click', () => {
         recorder.stopRecording(function () {
-          // let blob = recorder.getBlob();  // 1PERMITE DESCARGAR EL GIF
+          let blob = recorder.getBlob();  // 1PERMITE DESCARGAR EL GIF
+
+          console.log('Es es blob', recorder.getBlob());
+
+          video.pause()
+          const tracks = stream.getTracks()
+          tracks[0].stop()
+          reproducir_gif_img.addEventListener('click', () => {
+            video.style.display = 'none'
+            reproducir_gif.style.display = 'block'
+            let url2 = URL.createObjectURL(blob)
+            reproducir_gif.src = url2;
+          })
+
+
+          console.log('Este es tracks', tracks);
+
+
           // invokeSaveAsDialog(blob);       // 2PERMITE DESCARGAR EL GIF
 
           // TECER FASE -- GENERANDO ARCHIVO CAPTURA PARA SUBIR
-          video.pause()
+          /*  video.pause() */
           let form = new FormData();
-          let form2 = new FormData()
+
 
           form.append("file", recorder.getBlob(), "myGif.gif");
           console.log('Este es el blob', form.get("file"));
-          /* form2.append("lastModified", recorder.getBlob(), "myGif.gif");
-          console.log('lastModified', form2.get("file.lastModified")); */
+
+          /*   video.srcObject = RecordRTC.getTracks;
+            video.play() */
 
           /* let url = URL.createObjectURL(recorder.getBlob())
           console.log('ESTA ES LA MALDITA URL', url); */
           let url = recorder.toURL()
           console.log('ESTA ES LA MALDITA URL', url);
-
-
 
           subir_gif.addEventListener('click', () => {
             let inst = new giphy();
@@ -141,31 +164,10 @@ function videoGenerate() {
                       let nuevo_gif = JSON.parse(gif_local);
                       console.log('Después del parse ', nuevo_gif);
                       console.log(nuevo_gif.data.url);
-
-
-
-
                     })
                 return traer_gif
-
-
-
-                /* let captur = inst.getGifById(resData.data.id)
-                console.log('Es es captur', captur); */
-                /* console.log('Quiero morir 2', resData.url); */
-                /* console.log(obtenId.PromiseValue); */
-
-                /*  console.log('Este es resData ', resData.data);
- 
-                 localStorage.setItem(`GIF${resData.data.id}`, JSON.stringify(resData))
-                 localStorage.getItem(`GIF${resData.data.id}`) */
               });
           })
-
-          // CUARTA FASE - LOCAL STORAGE AGREGAR LOS ITEMS DE ID
-
-          /*           localStorage.setItem("id", JSON.stringify(recorder));
-                    localStorage.getItem("id"); */
 
         });
       })

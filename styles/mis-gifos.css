@@ -128,6 +128,13 @@ html {
      object-fit: cover;
 }
 
+.mostrar_camara_grabar img {
+  display: none;
+  padding: 1px 0 1px 1px;
+  width: 827px;
+  height: 431px;
+}
+
 .mostrar_camara_icono {
   width: 36px;
   height: 36px;
@@ -207,6 +214,17 @@ html {
   height: 36px;
   margin: 0;
   padding: 8px 0 8px 0;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.contenedor_reproducir_gif img {
+  /* width: 20px;
+    height: 20px; */
+  padding: 5px 6px 5px 8px;
   background: #f7c9f3;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
@@ -314,13 +332,20 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 21px 16px 16px 0;
+  margin: 21px 16px 16px 11px;
+  height: 36px;
+}
+
+.contenedor_repetir_enviar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .mostrar_camara_reloj,
