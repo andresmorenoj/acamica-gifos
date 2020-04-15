@@ -232,6 +232,17 @@ html {
   cursor: pointer;
 }
 
+.img--gif {
+  max-width: 300px;
+  height: 300px;
+}
+
+.gif__contenedor {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .nivel-2 {
   width: 632px;
   position: relative;
@@ -410,7 +421,7 @@ html {
 }
 
 .mis--gifs {
-  display: none;
+  /* display: none; */
   width: 90%;
   margin-left: auto;
   margin-right: auto;

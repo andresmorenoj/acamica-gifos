@@ -10,6 +10,11 @@ let contenedor_capturar = document.getElementById('contenedor_capturar')
 let subir_gif = document.getElementById('contenedor_finalizar_subir')
 let repetir_captura = document.getElementById('contenedor_finalizar_repetir')
 let reproducir_gif_img = document.getElementById('reproducir_gif_img')
+let mis_gifs = document.getElementsByClassName('img--gif')
+console.log('Estos son mis Gifs ', mis_gifs);
+let mis_gifs_contenedor = document.getElementById('mis--gifs__contenedor')
+
+
 
 
 
@@ -159,11 +164,12 @@ function videoGenerate() {
                     .then(resData3 => {
                       console.log('Otro intento mas ', resData3);
                       localStorage.setItem(`GIF ${resData3.data.id}`, JSON.stringify(resData3))
-                      let gif_local = localStorage.getItem(`GIF ${resData3.data.id}`)
+                      /* let gif_local = localStorage.getItem(`GIF ${resData3.data.id}`)
                       console.log('Antes del parse ', gif_local);
                       let nuevo_gif = JSON.parse(gif_local);
                       console.log('Después del parse ', nuevo_gif);
-                      console.log(nuevo_gif.data.url);
+                      console.log(nuevo_gif.data.url); */
+                      mostrar_mis_gif_creados()
                     })
                 return traer_gif
               });
@@ -174,3 +180,28 @@ function videoGenerate() {
 
     });
 }
+
+let mostrar_mis_gif_creados = () => {
+  for (let i = 0; i < localStorage.length; i++) {
+    let clave = localStorage.key(i)
+    let gif_local = localStorage.getItem(clave)
+    let nuevo_gif = JSON.parse(gif_local);
+
+    let gif_contenedor = document.createElement('div')
+    gif_contenedor.classList.add('gif__contenedor')
+
+    let div = document.createElement('div')
+
+    let img_gif = document.createElement('img')
+    img_gif.classList.add('img--gif')
+
+    div.appendChild(img_gif)
+
+    gif_contenedor.appendChild(div)
+
+    mis_gifs_contenedor.appendChild(gif_contenedor)
+    mis_gifs[i].src = nuevo_gif.data.images.downsized_large.url
+  }
+}
+
+
