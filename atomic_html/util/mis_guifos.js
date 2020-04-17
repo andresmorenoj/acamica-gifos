@@ -11,7 +11,10 @@ let repetir_captura = document.getElementById('contenedor_finalizar_repetir')
 let reproducir_gif_img = document.getElementById('reproducir_gif_img')
 let mis_gifs = document.getElementsByClassName('img--gif')
 let mis_gifs_contenedor = document.getElementById('mis--gifs__contenedor')
-
+let contenedor_subir_gif = document.getElementById('contenedor_subir_gif')
+let subir_barra_cuadro = document.getElementsByClassName('subir_barra_cuadro')
+let contenedor_cancelar = document.getElementById('contenedor_cancelar')
+let cancelar_texto = document.getElementById('cancelar_texto')
 ////////////////////////////
 
 /* CLASE GIFPHY CON FUNCIONES PARA ENVIAR EL GIF */
@@ -39,6 +42,8 @@ class giphy {
 capturar.textContent = 'Capturar'
 contenedor_listo.style.display = 'none'
 finalizar_botones.style.display = 'none'
+contenedor_subir_gif.style.display = 'none'
+contenedor_cancelar.style.display = 'none'
 
 /* INICIAR LA GRABACIÓN DE LA CAMÁRA */
 capturar.addEventListener('click', () => {
@@ -107,6 +112,16 @@ function crear_gifs() {
           let form = new FormData();
           form.append("file", recorder.getBlob(), "myGif.gif");
           subir_gif.addEventListener('click', () => {
+            contenedor_subir_gif.style.display = ''
+            video.style.display = 'none'
+            contenedor_cancelar.style.display = ''
+            finalizar_botones.style.display = 'none'
+            let contador = 0
+            setInterval(() => {
+              subir_barra_cuadro[contador].classList.add('subir_barra_cuadro--color')
+              contador += 1
+            }, 100);
+
             let inst = new giphy();
             let key = "IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e";
             inst.obtener(key, form)
@@ -117,14 +132,26 @@ function crear_gifs() {
                     .then(resData => {
                       localStorage.setItem(`GIF ${resData.data.id}`, JSON.stringify(resData))
                       mostrar_mis_gif_creados()
+                      if (contador == 23) {
+                        console.log('Terminé de cargar y tu gif esta en la parte de abajo')
+                      }
                     })
                 return traer_gif
               });
           })
         });
       })
-    });
+    })
+    .catch(error => {
+      console.error('No se que imprime esto', error);
+    })
 }
+
+cancelar_texto.addEventListener('click', () => {
+  location.reload()
+  alert('El Gif no se pudo subir')
+})
+
 //////////////////////////
 let mostrar_mis_gif_creados = () => {
   for (let i = 0; i < localStorage.length; i++) {

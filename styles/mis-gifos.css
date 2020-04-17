@@ -109,17 +109,6 @@ html {
   padding: 0;
 }
 
-.mostrar_camara_grabar {
-  width: 832px;
-  height: 434px;
-  margin: 8px 17px 0 11px;
-  background: #ffffff;
-  padding: 1px;
-  border: 1px solid #979797;
-  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
-          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
-}
-
 .mostrar_camara_grabar video {
   padding: 1px 0 1px 1px;
   width: 827px;
@@ -128,7 +117,7 @@ html {
      object-fit: cover;
 }
 
-.mostrar_camara_grabar img {
+.mostrar_camara_grabar .reproducir_gif {
   display: none;
   padding: 1px 0 1px 1px;
   width: 827px;
@@ -194,7 +183,8 @@ html {
   cursor: pointer;
 }
 
-.contenedor_finalizar_repetir {
+.contenedor_finalizar_repetir,
+.cancelar_texto {
   text-align: center;
   width: 144px;
   height: 36px;
@@ -235,6 +225,51 @@ html {
 .img--gif {
   max-width: 300px;
   height: 300px;
+}
+
+.subir_barra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #b4b4b4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000000;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  height: 22px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.subir_barra .subir_barra_cuadro {
+  width: 12px;
+  height: 18px;
+  border-right: 2px solid #999999;
+}
+
+.subir_barra .subir_barra_cuadro:last-child {
+  border-right: none;
+}
+
+.subir_barra .subir_barra_cuadro--color {
+  background-color: #f7c9f3;
+}
+
+.subir_texto {
+  font-weight: 600;
+  color: #110038;
+  margin-bottom: 41px;
+}
+
+.subir_texto2 {
+  color: #110038;
+  opacity: 64%;
+  font-size: 12px;
+}
+
+.subir_texto2 span {
+  text-decoration: line-through;
 }
 
 .gif__contenedor {
@@ -313,6 +348,17 @@ html {
   padding-bottom: 2.6px;
 }
 
+.mostrar_camara_grabar {
+  width: 832px;
+  height: 434px;
+  margin: 8px 17px 0 11px;
+  background: #ffffff;
+  padding: 1px;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+}
+
 .contenedor_capturar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -353,10 +399,42 @@ html {
   height: 36px;
 }
 
+.contenedor_cancelar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 21px 14px 16px 0;
+  height: 36px;
+}
+
 .contenedor_repetir_enviar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.contenedor_subir_gif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 440px;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .mostrar_camara_reloj,
