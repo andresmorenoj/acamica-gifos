@@ -192,6 +192,10 @@ ul {
 /* ------------------------------------- */
 /* -----------  ESTILOS PARA MOLECULAS NORMALES -----------  */
 /* ESTILOS SECCIÓN BUSQUEDA */
+.busqueda__principal {
+  background: #e6e6e6;
+}
+
 .busqueda__contenedor {
   background: #e6e6e6;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 0 0 #ffffff;
