@@ -1,5 +1,8 @@
 // VARIABLES GLOBALES
+let crear_gifs_seccion = document.getElementById('crear-gifs')
 let mostrar_camara = document.getElementById('mostrar_camara')
+let contenedor__boton_1 = document.getElementById('contenedor__boton-1')
+let contenedor__boton_2 = document.getElementById('contenedor__boton-2')
 let camara_titulo = document.getElementById('camara_titulo')
 let contenedor_listo = document.getElementById('contenedor_capturar_listo')
 let listo = document.getElementById('mostrar_camara_capturar_listo')
@@ -47,7 +50,7 @@ class giphy {
 ///////////////////
 
 // CÓDIGO PRINCIPAL
-
+mostrar_camara.style.display = 'none'
 capturar.textContent = 'Capturar'
 contenedor_listo.style.display = 'none'
 finalizar_botones.style.display = 'none'
@@ -55,6 +58,15 @@ contenedor_subir_gif.style.display = 'none'
 contenedor_cancelar.style.display = 'none'
 finalizar_gif.style.display = 'none'
 camara_titulo.textContent = 'Un Chequeo Antes de Empezar'
+
+contenedor__boton_1.addEventListener('click', () => {
+  crear_gifs_seccion.style.display = 'none'
+})
+
+contenedor__boton_2.addEventListener('click', () => {
+  mostrar_camara.style.display = ''
+  crear_gifs_seccion.style.display = 'none'
+})
 
 /* INICIAR LA GRABACIÓN DE LA CAMÁRA */
 capturar.addEventListener('click', () => {
@@ -65,7 +77,7 @@ capturar.addEventListener('click', () => {
   setTimeout(() => {
     contenedor_capturar.style.display = 'none'
     contenedor_listo.style.display = ''
-  }, 1000);
+  }, 3000);
 })
 ///////////////////
 
@@ -80,7 +92,7 @@ repetir_captura.addEventListener('click', () => {
   setTimeout(() => {
     contenedor_capturar.style.display = 'none'
     contenedor_listo.style.display = ''
-  }, 1000);
+  }, 3000);
 })
 
 function crear_gifs() {

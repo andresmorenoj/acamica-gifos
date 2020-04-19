@@ -13,6 +13,7 @@ let ver_mas4 = document.getElementsByClassName('verMas4')
 let opciones = document.getElementsByClassName('opciones')
 let mostar_opciones = document.getElementById('mostarOpciones')
 let mostar_opciones_texto = document.getElementsByClassName('mostarOpcionesTexto')
+let buscar_sugerencia_titulo = [];
 
 ///////////////////////
 
@@ -34,6 +35,8 @@ function getSugerencias() {
           let url_sugerencia = resData.data[i].images.downsized.url
           let titulo_sugerencia_completo = resData.data[i].title
 
+          buscar_sugerencia_titulo.push(resData.data[i].title.split('GIF', 1))
+
           for (let j = i; j < gif_sugerencia.length; j++) {
             gif_sugerencia[j].src = url_sugerencia
           }
@@ -52,18 +55,6 @@ function getSugerencias() {
             gif_titulo_tendencia[m].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
 
-          // TAMAÑO DINÁMICO DE LA ETIQUE <img>
-          if (resData.data[i].images.downsized.width <= 450) {
-            gif_tendencia[i].width = 300
-            gif_tendencia_contenedor[i].classList.add('gif__contenedor--1')
-            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--2')
-
-          } else if (resData.data[i].images.downsized.width >= 451) {
-            gif_tendencia[i].width = 632
-            gif_tendencia_contenedor[i].classList.add('gif__contenedor--2')
-            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--1')
-          }
-
           ///////////////////////
         }
         return resData
@@ -80,13 +71,10 @@ function getSugerencias() {
 
 let verMasBuscar1 = () => {
   if (ver_mas1[0].click) {
-    let padre = ver_mas1[0].parentNode
-    let primerHijo = padre.firstChild.nextElementSibling
-    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
     let search_verMas1 = () => {
       let buscar_verMas1 = document.getElementById('buscar')
-      buscar_verMas1.value = primerHijoDelHijo.textContent.replace('#', '').trim()
-      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      buscar_verMas1.value = buscar_sugerencia_titulo[0]
+      titulo_tendencia.textContent = buscar_sugerencia_titulo[0]
       event.preventDefault();
       getTendencias(buscar_verMas1.value); //Llamada a la función del Endpoint
     }
@@ -96,14 +84,10 @@ let verMasBuscar1 = () => {
 
 let verMasBuscar2 = () => {
   if (ver_mas2[0].click) {
-    let padre = ver_mas2[0].parentNode
-    let primerHijo = padre.firstChild.nextElementSibling
-    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
-
     let search_verMas2 = () => {
       let buscar_verMas2 = document.getElementById('buscar')
-      buscar_verMas2.value = primerHijoDelHijo.textContent.replace('#', '').trim()
-      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      buscar_verMas2.value = buscar_sugerencia_titulo[1]
+      titulo_tendencia.textContent = buscar_sugerencia_titulo[1]
       event.preventDefault();
       getTendencias(buscar_verMas2.value); //Llamada a la función del Endpoint
     }
@@ -111,17 +95,12 @@ let verMasBuscar2 = () => {
   }
 }
 
-
 let verMasBuscar3 = () => {
   if (ver_mas3[0].click) {
-    let padre = ver_mas3[0].parentNode
-    let primerHijo = padre.firstChild.nextElementSibling
-    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
-
     let search_verMas3 = () => {
       let buscar_verMas3 = document.getElementById('buscar')
-      buscar_verMas3.value = primerHijoDelHijo.textContent.replace('#', '').trim()
-      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      buscar_verMas3.value = buscar_sugerencia_titulo[2]
+      titulo_tendencia.textContent = buscar_sugerencia_titulo[2]
       event.preventDefault();
       getTendencias(buscar_verMas3.value); //Llamada a la función del Endpoint
     }
@@ -129,17 +108,12 @@ let verMasBuscar3 = () => {
   }
 }
 
-
 let verMasBuscar4 = () => {
   if (ver_mas4[0].click) {
-    let padre = ver_mas4[0].parentNode
-    let primerHijo = padre.firstChild.nextElementSibling
-    let primerHijoDelHijo = primerHijo.firstChild.nextElementSibling
-
     let search_verMas4 = () => {
       let buscar_verMas4 = document.getElementById('buscar')
-      buscar_verMas4.value = primerHijoDelHijo.textContent.replace('#', '').trim()
-      titulo_tendencia.textContent = primerHijoDelHijo.textContent.replace('#', '').trim()
+      buscar_verMas4.value = buscar_sugerencia_titulo[3]
+      titulo_tendencia.textContent = buscar_sugerencia_titulo[3]
       event.preventDefault();
       getTendencias(buscar_verMas4.value); //Llamada a la función del Endpoint
     }
@@ -178,18 +152,6 @@ function getTendencias(search) {
           for (k = i; k < gif_titulo_tendencia.length; k++) {
             let titulo_tendencia_final = titulo_tendencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
             gif_titulo_tendencia[k].textContent = `#${titulo_tendencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
-          }
-
-          // TAMAÑO DINÁMICO DE LA ETIQUE <img>
-          if (resData.data[i].images.downsized.width <= 450) {
-            gif_tendencia[i].width = 300
-            gif_tendencia_contenedor[i].classList.add('gif__contenedor--1')
-            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--2')
-
-          } else if (resData.data[i].images.downsized.width >= 451) {
-            gif_tendencia[i].width = 632
-            gif_tendencia_contenedor[i].classList.add('gif__contenedor--2')
-            gif_tendencia_contenedor[i].classList.remove('gif__contenedor--1')
           }
         }
         return resData
