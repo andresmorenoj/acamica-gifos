@@ -26,14 +26,16 @@ function cargaDelBody() { // Función para detectar la carga del body y llamar a
 }
 
 // ENDPOINT SUGERENCIAS
-function getSugerencias() {
+async function getSugerencias() {
   const Sugerencias =
-    fetch('https://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=10')
+    await fetch('https://api.giphy.com/v1/gifs/trending' + '?api_key=' + 'IJ7aSGsN2e6e1INt0JSAqYYwHPKFi58e' + '&limit=14')
       .then(response => response.json())
       .then(resData => {
         for (let i = 0; i < resData.data.length; i++) {
           let url_sugerencia = resData.data[i].images.downsized.url
+          let url_tendencia = resData.data[4 + i].images.downsized.url
           let titulo_sugerencia_completo = resData.data[i].title
+          let titulo_tendencia_completo = resData.data[4 + i].title
 
           buscar_sugerencia_titulo.push(resData.data[i].title.split('GIF', 1))
 
@@ -47,11 +49,11 @@ function getSugerencias() {
           }
 
           for (let t = 0; t < gif_tendencia.length; t++) {
-            gif_tendencia[i].src = url_sugerencia
+            gif_tendencia[i].src = url_tendencia
           }
 
           for (let m = i; m < gif_titulo_tendencia.length; m++) {
-            let titulo_sugerencia_final = titulo_sugerencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
+            let titulo_sugerencia_final = titulo_tendencia_completo.split('GIF', 1)// ELIMINAR EL AUTOR DEL TÍTULO DEL GIF
             gif_titulo_tendencia[m].textContent = `#${titulo_sugerencia_final[0].replace(/ /g, '')} ` // ELIMINAR ESPACIOS EN BLANCO
           }
 
